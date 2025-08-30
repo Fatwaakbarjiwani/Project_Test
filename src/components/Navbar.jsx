@@ -1,10 +1,12 @@
 import nav from "../assets/iconNav.svg";
 import downNav from "../assets/downNav.svg";
 import { useEffect, useState } from "react";
+import { dataCard } from "../data/dataCard";
 
 export default function Navbar() {
   const [scrollY, setScrollY] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
+  const [isVillaOpen, setIsVillaOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,13 +28,52 @@ export default function Navbar() {
       }`}
     >
       <div className="flex font-[400] max-w-primary sm:mx-auto mx-4 py-6 justify-between items-center">
-        <div className="flex w-1/4 space-x-8 items-center gap-2">
-          <button onClick={() => setIsOpen(!isOpen)}>
+        <div className="flex w-1/4 space-x-8 items-center gap-2 relative">
+          <button className="cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
             <img src={nav} alt="logo" />
           </button>
-          <div className="hidden sm:flex items-center gap-4">
+          <div
+            onClick={() => setIsOpen(!isOpen)}
+            className="hidden cursor-pointer sm:flex items-center gap-4"
+          >
             <h1 className="text-lg">Villa Category</h1>
             <img src={downNav} className="pt-1" alt="down" />
+          </div>
+        </div>
+        <div
+          className={`max-w-[40%] sm:max-w-sm w-full bg-white p-2 sm:p-4 shadow-lg ${
+            isOpen ? "absolute top-20 left-[10%]" : "hidden"
+          }`}
+        >
+          <div className="space-y-0">
+            <button className="w-full text-sm sm:text-base text-left py-3 px-4 text-black hover:bg-gray-50 transition-colors duration-200">
+              About
+            </button>
+            <button
+              onClick={() => setIsVillaOpen(!isVillaOpen)}
+              className="w-full text-sm sm:text-base relative border-y-2 border-gray-200 text-left py-3 px-4 text-black hover:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
+            >
+              <span>Villa Category</span>
+              <p>{`>`}</p>
+              {/* bagian 2 */}
+              <div
+                className={`absolute top-0 -right-[110%] bg-white w-full h-full ${
+                  isVillaOpen ? "block" : "hidden"
+                }`}
+              >
+                {dataCard.map((item) => (
+                  <button
+                    key={item.id}
+                    className="w-full bg-white border-y border-gray-200 text-left py-3 px-4 text-black hover:bg-gray-50 transition-colors duration-200"
+                  >
+                    {item.name}
+                  </button>
+                ))}
+              </div>
+            </button>
+            <button className="w-full text-sm sm:text-base text-left py-3 px-4 text-black hover:bg-gray-50 transition-colors duration-200">
+              Gallery
+            </button>
           </div>
         </div>
         <div className="hidden sm:flex w-1/4 justify-between items-center gap-2">
@@ -40,12 +81,6 @@ export default function Navbar() {
           <button className="bg-primary p-2 w-1/2">Login</button>
         </div>
       </div>
-      {/* <div className="">
-        <div className="flex flex-col gap-4">
-          <button>Contact us</button>
-          <button className="bg-primary p-2 w-1/2">Login</button>
-        </div>
-      </div> */}
     </div>
   );
 }
