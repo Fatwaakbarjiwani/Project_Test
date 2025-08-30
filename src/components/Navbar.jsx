@@ -40,12 +40,12 @@ export default function Navbar() {
           <button className="bg-primary p-2 w-1/2">Login</button>
         </div>
       </div>
-      <div className={`sm:hidden ${isOpen ? "block" : "hidden"}`}>
+      {/* <div className="">
         <div className="flex flex-col gap-4">
           <button>Contact us</button>
           <button className="bg-primary p-2 w-1/2">Login</button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
