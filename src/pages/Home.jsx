@@ -63,11 +63,11 @@ export default function Home() {
           <img src={downGreen} alt="downGreen" />
         </div>
         <div className="grid grid-cols-2 gap-4 my-4">
-          <div className="flex items-center p-2 justify-center gap-8 border-r border-gray-200 w-full">
+          <div className="flex text-20p items-center p-2 justify-center gap-8 border-r border-gray-200 w-full">
             <img src={iconCheckin} alt="downGreen" />
             Check in
           </div>
-          <div className="flex items-center p-2 justify-center gap-8 border-gray-200 w-full">
+          <div className="flex text-20p items-center p-2 justify-center gap-8 border-gray-200 w-full">
             <img src={iconCheckin} alt="downGreen" />
             Check out
           </div>
@@ -162,7 +162,7 @@ export default function Home() {
           ))}
         </div>
         <div className="flex justify-center">
-          <button className="text-primary bg-secondary px-4 py-2 w-1/9 rounded-md transition-transform duration-300 hover:scale-105 active:scale-95">
+          <button className="text-primary bg-secondary px-4 py-2 rounded-md transition-transform duration-300 hover:scale-105 active:scale-95">
             Load More
           </button>
         </div>
