@@ -95,7 +95,7 @@ export default function Home() {
         </button>
       </div>
       {/* content ke 3 */}
-      <div className="max-w-primary sm:mx-auto mx-4 pb-4 pt-16 sm:py-24 relative">
+      <div className="max-w-primary sm:mx-auto mx-4 pb-4 py-24 relative">
         <h1 className="text-neutral-700 text-20p sm:text-4xl font-semibold">
           About Villa <span className="text-primary">Amadaha</span>
         </h1>
