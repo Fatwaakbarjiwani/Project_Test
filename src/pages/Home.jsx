@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       {/* content ke 1 */}
-      <div className="w-full sm:min-h-screen flex justify-center items-center relative z-20">
+      <div className="w-full flex justify-center items-center relative z-20">
         <img
           src={bg}
           alt="home"
@@ -95,7 +95,10 @@ export default function Home() {
         </button>
       </div>
       {/* content ke 3 */}
-      <div className="max-w-primary sm:mx-auto mx-4 pb-4 py-24 relative">
+      <div
+        id="about"
+        className="max-w-primary sm:mx-auto mx-4 pb-4 py-24 relative"
+      >
         <h1 className="text-neutral-700 text-20p sm:text-4xl font-semibold">
           About Villa <span className="text-primary">Amadaha</span>
         </h1>
@@ -151,7 +154,10 @@ export default function Home() {
       </div>
       {/* content ke 5 */}
       {/* desktop */}
-      <div className="max-w-primary hidden sm:block sm:mx-auto mx-4 space-y-8 my-4 sm:my-32">
+      <div
+        id="villa-studios"
+        className="max-w-primary hidden sm:block sm:mx-auto mx-4 space-y-8 my-4 sm:my-32"
+      >
         <h1 className="text-neutral-700 sm:text-4xl font-semibold text-left sm:text-center">
           Our choise of
           <span className="text-primary"> Villa Studios</span>
@@ -363,7 +369,10 @@ export default function Home() {
         </div>
       </div>
       {/* content ke 8 */}
-      <div className="max-w-primary sm:mx-auto mx-4 my-16 sm:my-32">
+      <div
+        id="gallery"
+        className="max-w-primary sm:mx-auto mx-4 my-16 sm:my-32"
+      >
         <h1 className="relative text-neutral-700 text-center mb-4 sm:mb-16 text-20p sm:text-4xl font-semibold">
           Our{" "}
           <span className="text-primary">

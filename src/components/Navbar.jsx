@@ -46,7 +46,15 @@ export default function Navbar() {
           }`}
         >
           <div className="space-y-0">
-            <button className="w-full text-sm sm:text-base text-left py-3 px-4 text-black hover:bg-gray-50 transition-colors duration-200">
+            <button
+              onClick={() => {
+                setIsOpen(false);
+                document
+                  .getElementById("about")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="w-full text-sm sm:text-base text-left py-3 px-4 text-black hover:bg-gray-50 transition-colors duration-200"
+            >
               About
             </button>
             <button
@@ -64,6 +72,13 @@ export default function Navbar() {
                 {dataCard.map((item) => (
                   <button
                     key={item.id}
+                    onClick={() => {
+                      setIsOpen(false);
+                      setIsVillaOpen(false);
+                      document
+                        .getElementById("villa-studios")
+                        ?.scrollIntoView({ behavior: "smooth" });
+                    }}
                     className="w-full bg-white border-y border-gray-200 text-left py-3 px-4 text-black hover:bg-gray-50 transition-colors duration-200"
                   >
                     {item.name}
@@ -71,7 +86,15 @@ export default function Navbar() {
                 ))}
               </div>
             </button>
-            <button className="w-full text-sm sm:text-base text-left py-3 px-4 text-black hover:bg-gray-50 transition-colors duration-200">
+            <button
+              onClick={() => {
+                setIsOpen(false);
+                document
+                  .getElementById("gallery")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="w-full text-sm sm:text-base text-left py-3 px-4 text-black hover:bg-gray-50 transition-colors duration-200"
+            >
               Gallery
             </button>
           </div>
